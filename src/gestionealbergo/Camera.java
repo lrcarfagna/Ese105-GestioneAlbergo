@@ -32,4 +32,9 @@ public class Camera {
 			
 		}
 	}
+	
+	public boolean isDisponibile(LocalDateTime dal,LocalDateTime al){
+		
+		
+	}
 }
