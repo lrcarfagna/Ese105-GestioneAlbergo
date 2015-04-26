@@ -2,6 +2,7 @@ package gestionealbergo;
 
 public class Cliente {
 	
+	
 	private String nome;
 	private String cognome;
 	private String email;
@@ -14,35 +15,35 @@ public class Cliente {
 				this.nome=nome;
 			}
 			else
-				throw new IllegalArgumentException("Errore nome");
+				throw new IllegalArgumentException("Errore nome<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore nome=null");
 		
 		if(cognome!=null)
-			if(nome.length()>0){
+			if(cognome.length()>0){
 				this.cognome=cognome;
 			}
 			else
-				throw new IllegalArgumentException("Errore cognome");
+				throw new IllegalArgumentException("Errore cognome<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore cognome=null");
 		
 		if(email!=null)
 			if(email.length()>0){
 				this.email=email;
 			}
 			else
-				throw new IllegalArgumentException("Errore email");
+				throw new IllegalArgumentException("Errore email<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore email=null");
 		
 		if(cellulare!=null)
 			if(cellulare.length()>0)
 				this.cellulare=cellulare;
 			else
-				throw new IllegalArgumentException("Errore cellulare");
+				throw new IllegalArgumentException("Errore cellulare<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore cellulare=null");
 	}
 	
 	public Cliente(String nome,String cognome,String cellulare){
@@ -52,27 +53,29 @@ public class Cliente {
 				this.nome=nome;
 			}
 			else
-				throw new IllegalArgumentException("Errore nome");
+				throw new IllegalArgumentException("Errore nome<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore nome=null");
 		
 		if(cognome!=null)
-			if(nome.length()>0){
+			if(cognome.length()>0){
 				this.cognome=cognome;
 			}
 			else
-				throw new IllegalArgumentException("Errore cognome");
+				throw new IllegalArgumentException("Errore cognome<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore cognome=null");
 		
 		if(cellulare!=null)
 			if(cellulare.length()>0){
 				this.cellulare=cellulare;
 			}
 			else
-				throw new IllegalArgumentException("Errore cellulare");
+				throw new IllegalArgumentException("Errore cellulare<=0");
 		else
-			throw new IllegalArgumentException("Errore nome");
+			throw new IllegalArgumentException("Errore cellulare=null");
+		
+		this.email="/"; // quando l'email non viene fornita inserisco il lo slash che verrà stampato nel toString()
 	}
 	
 	public String getNome(){
@@ -91,6 +94,14 @@ public class Cliente {
 		if(email!=null)
 			if(email.length()>0)
 				this.email=email;
+			else
+				throw new IllegalArgumentException("Errore email<=0");
+		else throw new IllegalArgumentException("Errore email=null");
+	}
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + ", cognome=" + cognome + ", email="
+				+ email + ", cellulare=" + cellulare + "]";
 	}
 
 }
